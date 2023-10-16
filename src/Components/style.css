@@ -60,10 +60,10 @@ li {
     color: #454851;
     font-size: 18px;
     margin-left: 10px;
-    width: 90%;
+    width: 87%;
 }
 .toDoItem input {
-    width: 5%;
+    min-width: 5%;
     border: 12px solid #7BAE7F;
     height: 20px;
 }
@@ -74,16 +74,16 @@ li {
     color: #454851;
     font-size: 18px;
     margin-left: 10px;
-    width: 90%;
+    width: 87%;
     text-decoration: line-through;
 }
 .deleteTodo {
-    width: 5%;
-    margin-left: 3px;
+    min-width: 5%;
     background-color: inherit;
     border: none;
     outline: none;
     cursor: pointer;
+    text-align: start;
 }
 .deleteTodo span {
     position: absolute;
@@ -95,6 +95,7 @@ li {
     width: 20px;
     height: 2px;
     background: #454851;
+    opacity: 0.8;
 }
 .deleteTodo span:before {
     transform: rotate(45deg);
@@ -102,4 +103,21 @@ li {
 
 .deleteTodo span:after {
     transform: rotate(-45deg);
+}
+
+@media(max-width:600px) {
+    .container {
+        width: 90%;
+    }
+    .toDoElements {
+        margin-top: 22px;
+    }
+    .toDoList {
+        margin-top: 20px;
+        min-height: 660px;
+    }
+    .pageTitle {
+    text-align: center;
+    margin: 20px 0;
+}
 }

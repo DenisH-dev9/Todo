@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ToDoElements from "./toDoElements"
+import { Context } from "./context";
 
 const Main = () => {
 
@@ -42,6 +43,9 @@ const Main = () => {
     }
 
     return (
+        <Context.Provider value={{
+            removeTodo, toggleTodo
+        }}>
         <>
             <div className="container">
                 <div className="toDoList">
@@ -64,6 +68,7 @@ const Main = () => {
                 </div>
             </div>
         </>
+        </Context.Provider>
     );
 };
 

@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "./context";
 
-    export default function ToDoItem({id, value, completed,toggleTodo, removeTodo}) {
+    export default function ToDoItem({id, value, completed}) {
+
+        const {toggleTodo, removeTodo} = useContext(Context)
+
         return (
                 <li>
                     <label className="toDoItem">
