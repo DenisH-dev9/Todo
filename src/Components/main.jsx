@@ -9,8 +9,7 @@ const Main = () => {
   );
   const [todoValue, setTodoValue] = useState("");
   const [modalActive, setModalActive] = useState(false);
-  const [newValue, setNewValue] = useState("");
-  const [selectedTodoId, setSelectedTodoId] = useState()
+  const [selectedTodoId, setSelectedTodoId] = useState();
 
   const addTodo = (event) => {
     if (event.key === "Enter") {
@@ -74,12 +73,13 @@ const Main = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  console.log(todos)
   return (
     <Context.Provider
       value={{
         removeTodo,
         toggleTodo,
+        openModal,
+        editTodo,
       }}
     >
       <>
@@ -100,12 +100,9 @@ const Main = () => {
             </div>
             <ToDoElements
               todos={todos}
-              toggleTodo={toggleTodo}
-              removeTodo={removeTodo}
               setModalActive={setModalActive}
               selectedTodoId={selectedTodoId}
               setSelectedTodoId={setSelectedTodoId}
-              openModal={openModal}
             />
           </div>
         </div>
@@ -113,9 +110,6 @@ const Main = () => {
       <Modal
       modalActive={modalActive}
       setModalActive={setModalActive}
-      newValue={newValue}
-      setNewValue={setNewValue}
-      editTodo={editTodo}
       />
     </Context.Provider>
   );

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { Context } from "./context";
 
 
-const Modal = ({modalActive, setModalActive, editTodo}) => {
+const Modal = ({modalActive, setModalActive}) => {
+  const { editTodo } = useContext(Context);
 
   
   const {
@@ -25,6 +27,7 @@ const Modal = ({modalActive, setModalActive, editTodo}) => {
             <textarea
             {...register('todoValue')}
             className="formInput"
+            //defaultValue={}
             />
           </label>
           

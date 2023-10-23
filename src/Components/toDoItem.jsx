@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "./context";
 
-export default function ToDoItem({ id, value, completed, setModalActive, openModal}) {
-  const { toggleTodo, removeTodo} = useContext(Context);
+export default function ToDoItem({ id, value, completed, setModalActive}) {
+  const { toggleTodo, removeTodo, openModal} = useContext(Context);
 
   return (
     <li>
