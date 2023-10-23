@@ -1,123 +1,212 @@
-*{
-    padding: 0;
-    margin: 0;
-    color: #FCEFF9;
-    transition: 0.5s;
+* {
+  padding: 0;
+  margin: 0;
+  color: #fceff9;
 }
+
 body {
-    background-color: #454851;
+  background-color: #454851;
 }
 
 .container {
-    width: 70%;
-    margin: auto;
+  width: 70%;
+  margin: auto;
 }
+
 .pageTitle {
-    text-align: center;
-    margin: 30px 0;
+  text-align: center;
+  margin: 30px 0;
 }
 
 .toDoList {
-    margin-top: 40px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    background-color: #73956F;
-    min-height: 660px;
-    border-radius: 33px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #73956f;
+  min-height: 660px;
+  border-radius: 33px;
 }
-
+.input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
 .toDoInput {
-    width: 50%;
-    background-color: #FCEFF9;
-    border: 2px solid #95D7AE;
-    border-radius: 5px;
-    color: #454851;
-    outline: none;
-    padding: 6px;
-    text-align: center;
-    font-size: 16px;
+  min-width: 50%;
+  max-width: 74%;
+  height: 24px;
+  min-height: 24px;
+  max-height: 140px;
+  background-color: #fceff9;
+  border: 2px solid #95d7ae;
+  border-radius: 5px;
+  color: #454851;
+  outline: none;
+  padding: 6px;
+  text-align: center;
+  font-size: 16px;
+}
+.addTodobtn {
+  width: 8%;
+  height: 39px;
+  margin-left: 5px;
+  color: #454851;
+  font-size: 30px;
+  background-color: #fceff9;
+  border: 2px solid #95d7ae;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addTodobtn:active {
+  background-color: #cac7c9;
 }
 
 .toDoElements {
-    margin-top: 50px;
-    width: 80%;
+  margin-top: 30px;
+  width: 80%;
 }
+
 li {
-    display: block;
+  display: block;
 }
+
 .toDoItem {
-    display: flex;
-    margin-top: 10px;
-    border: 2px solid #7BAE7F;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #95D7AE;
-    word-wrap: break-word;
+  display: flex;
+  margin-top: 10px;
+  border: 2px solid #7bae7f;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #95d7ae;
+  word-wrap: break-word;
 }
+
 .toDoItem .value {
-    color: #454851;
-    font-size: 18px;
-    margin-left: 10px;
-    width: 87%;
+  color: #454851;
+  font-size: 18px;
+  margin-left: 10px;
+  width: 84%;
 }
+
 .toDoItem input {
-    min-width: 5%;
-    border: 12px solid #7BAE7F;
-    height: 20px;
+  min-width: 5%;
+  border: 12px solid #7bae7f;
+  height: 20px;
 }
+
 .todoText {
-    color: #454851;
+  color: #454851;
 }
+
 .strikeText {
-    color: #454851;
-    font-size: 18px;
-    margin-left: 10px;
-    width: 87%;
-    text-decoration: line-through;
+  color: #454851;
+  font-size: 18px;
+  margin-left: 10px;
+  width: 84%;
+  text-decoration: line-through;
 }
+
+.editTodo {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 2px;
+  margin-top: 4px;
+}
+
+.editTodo img {
+  max-width: 20px;
+  margin: auto;
+  opacity: 0.7;
+}
+
 .deleteTodo {
-    min-width: 5%;
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-align: start;
+  min-width: 5%;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: start;
 }
+
 .deleteTodo span {
-    position: absolute;
+  position: absolute;
 }
+
 .deleteTodo span:before,
 .deleteTodo span:after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: #454851;
-    opacity: 0.8;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #454851;
+  opacity: 0.8;
 }
+
 .deleteTodo span:before {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .deleteTodo span:after {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
-@media(max-width:600px) {
-    .container {
-        width: 90%;
-    }
-    .toDoElements {
-        margin-top: 22px;
-    }
-    .toDoList {
-        margin-top: 20px;
-        min-height: 660px;
-    }
-    .pageTitle {
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  .toDoElements {
+    margin-top: 22px;
+  }
+
+  .toDoList {
+    margin-top: 20px;
+    min-height: 660px;
+  }
+
+  .pageTitle {
     text-align: center;
     margin: 20px 0;
+  }
 }
+
+.modal {
+  position: fixed;
+  color: black;
+  background-color: rgb(11, 11, 11, 0.5);
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+}
+
+.modal.active {
+  transform: scale(1);
+
+}
+.modalContent {
+  width: 440px;
+  height: 300px;
+  background-color: rgb(245, 225, 240);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalContent label {
+  color: black;
+}
+.formInput {
+  color: black;
+}
+.modalContent input {
+  color: black;
 }
