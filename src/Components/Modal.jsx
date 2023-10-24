@@ -43,7 +43,7 @@ const Modal = ({modalActive, setModalActive, selectedTodoValue, setSelectedTodoV
             />
           </label>
           <label>
-            Title:
+            Description:
             <textarea
             {...register('todoDescription')}
             className="formInput"

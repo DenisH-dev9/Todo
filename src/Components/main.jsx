@@ -8,7 +8,7 @@ const Main = () => {
     JSON.parse(localStorage.getItem("todos")) || []
   );
   const [todoValue, setTodoValue] = useState("");
-  const [modalActive, setModalActive] = useState(false);
+  const [modalActive, setModalActive] = useState(true);
   const [selectedTodoId, setSelectedTodoId] = useState();
   const [selectedTodoValue, setSelectedTodoValue] = useState();
   const [selectedTodoDescription, setSelectedTodoDescription] = useState();
@@ -105,7 +105,7 @@ const Main = () => {
               onKeyPress={addTodo}
               autoFocus
             />
-            <button className="addTodobtn" onClick={() => addTodobtn(todoValue)}>+</button>
+            <button className="addTodobtn" onClick={() => addTodobtn(todoValue)}></button>
             </div>
             <ToDoElements
               todos={todos}
