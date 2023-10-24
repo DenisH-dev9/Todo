@@ -1,7 +1,10 @@
+
 * {
   padding: 0;
   margin: 0;
   color: #fceff9;
+  font-family: 'Tahoma', sans-serif;
+  letter-spacing: 1px;
 }
 
 body {
@@ -88,6 +91,13 @@ li {
   font-size: 18px;
   margin-left: 10px;
   width: 84%;
+}
+.titleTodo {
+  color: #454851;
+  list-style: none;
+}
+.descriptionTodo {
+  color: #454851;
 }
 
 .toDoItem input {
@@ -193,20 +203,42 @@ li {
 
 }
 .modalContent {
-  width: 440px;
-  height: 300px;
-  background-color: rgb(245, 225, 240);
+  width: 540px;
+  height: 400px;
+  color: #454851;
+  background-color: #7bae7f;
   border-radius: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  font-weight: bold;
+  font-size: 18px;
 }
 .modalContent label {
-  color: black;
+  width: 80%;
+  margin-top: 30px;
+  margin-bottom: 6px;
+  color: white;
 }
 .formInput {
-  color: black;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 20px;
+  max-height: 52px;
+  color: white;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  border-bottom: solid 2px #454851;
+  font-size: 16px;
 }
-.modalContent input {
-  color: black;
+.submitButton {
+  position: fixed;
+  width: 20%;
+  height: 30px;
+  left: 40%;
+  top: 68%;
+  color: #454851;
+  font-size: 18px;
 }

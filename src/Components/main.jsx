@@ -10,6 +10,8 @@ const Main = () => {
   const [todoValue, setTodoValue] = useState("");
   const [modalActive, setModalActive] = useState(false);
   const [selectedTodoId, setSelectedTodoId] = useState();
+  const [selectedTodoValue, setSelectedTodoValue] = useState();
+  const [selectedTodoDescription, setSelectedTodoDescription] = useState();
 
   const addTodo = (event) => {
     if (event.key === "Enter") {
@@ -18,6 +20,7 @@ const Main = () => {
         {
           id: Date.now(),
           value: todoValue,
+          description: "",
           completed: false,
         },
       ]);
@@ -25,32 +28,38 @@ const Main = () => {
     }
   };
 
-  const addTodobtn = (todoValue) => {
+  const addTodobtn = () => {
       setTodos([
         ...todos,
         {
           id: Date.now(),
           value: todoValue,
+          description: "",
           completed: false,
         },
       ]);
       setTodoValue("");
   };
 
-  const openModal = (id) => {
+  const openModal = (id, value, description) => {
     setSelectedTodoId(id);
+    setSelectedTodoValue(value);
+    setSelectedTodoDescription(description);
   }
 
-  const editTodo = (todoValue) => {
+  const editTodo = (todoValue, todoDescription) => {
     setTodos([
-      ...todos.map((todos) =>{
+      ...todos.map((todos) => {
       return  (
         todos.id === selectedTodoId
-          ? { ...todos, value: todoValue }
+          ? { ...todos, value: todoValue, 
+            description: todoDescription }
           : { ...todos }
       )}),
     ]);
   };
+  
+
 
 
   const removeTodo = (id) => {
@@ -110,6 +119,12 @@ const Main = () => {
       <Modal
       modalActive={modalActive}
       setModalActive={setModalActive}
+      todos={todos}
+      selectedTodoId={selectedTodoId}
+      selectedTodoValue={selectedTodoValue}
+      setSelectedTodoValue={setSelectedTodoValue}
+      selectedTodoDescription={selectedTodoDescription}
+      setSelectedTodoDescription={setSelectedTodoDescription}
       />
     </Context.Provider>
   );

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "./context";
 
-export default function ToDoItem({ id, value, completed, setModalActive}) {
+export default function ToDoItem({ id, value, description, completed, setModalActive}) {
   const { toggleTodo, removeTodo, openModal} = useContext(Context);
 
   return (
@@ -15,19 +15,19 @@ export default function ToDoItem({ id, value, completed, setModalActive}) {
             toggleTodo(id);
           }}
         />
-        <span
+        <details 
           className={completed ? "strikeText" : "value"}
-          onClick={() => {
-            toggleTodo(id);
-          }}
         >
-          {value}
-        </span>
+          <summary className="titleTodo">
+            {value}
+          </summary>
+          <p className="descriptionTodo">Description: {description}</p>
+        </details>
         <button
           className="editTodo"
           onClick={() => {
             setModalActive(true);
-            openModal(id);
+            openModal(id, value, description);
           }}
         >
           <img

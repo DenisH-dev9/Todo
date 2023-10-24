@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Context } from "./context";
 
 
-const Modal = ({modalActive, setModalActive}) => {
+const Modal = ({modalActive, setModalActive, selectedTodoValue, setSelectedTodoValue, selectedTodoDescription, setSelectedTodoDescription}) => {
   const { editTodo } = useContext(Context);
 
   
@@ -15,23 +15,43 @@ const Modal = ({modalActive, setModalActive}) => {
     handleSubmit,
   } = useForm();
 
+
   const onSubmit = (data) => {
-    editTodo(data.todoValue);
+    editTodo(data.todoValue, data.todoDescription);
+    setModalActive(false);
   }
+
+  const handleTitleChange = (e) => {
+    const newValue = e.target.value;
+    setSelectedTodoValue(newValue);
+  };
+  const handleDescriptionChange = (e) => {
+    const newValue = e.target.value;
+    setSelectedTodoDescription(newValue);
+  };
 
   return(
     <div className={modalActive ? "modal active" : "modal"} onClick={() => setModalActive(false)}>
       <form onSubmit={handleSubmit(onSubmit)} className="modalContent" onClick={(e) => e.stopPropagation()}>
           <label>
-            Value:
+            Title:
             <textarea
             {...register('todoValue')}
             className="formInput"
-            //defaultValue={}
+            value={selectedTodoValue}
+            onChange={handleTitleChange}
             />
           </label>
-          
-          <input type="submit" value="Submit"/>
+          <label>
+            Title:
+            <textarea
+            {...register('todoDescription')}
+            className="formInput"
+            value={selectedTodoDescription}
+            onChange={handleDescriptionChange}
+            />
+          </label>
+          <button type="submit" className="submitButton">Submit</button>
       </form>
     </div>
   )

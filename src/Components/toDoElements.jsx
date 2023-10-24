@@ -15,6 +15,7 @@ export default function ToDoElements({
             key={todos.id}
             id={todos.id}
             value={todos.value}
+            description={todos.description}
             completed={todos.completed}
             setModalActive={setModalActive}
             selectedTodoId={selectedTodoId}
