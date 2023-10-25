@@ -8,7 +8,7 @@ const Main = () => {
     JSON.parse(localStorage.getItem("todos")) || []
   );
   const [todoValue, setTodoValue] = useState("");
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
   const [selectedTodoId, setSelectedTodoId] = useState();
   const [selectedTodoValue, setSelectedTodoValue] = useState();
   const [selectedTodoDescription, setSelectedTodoDescription] = useState();
@@ -63,6 +63,7 @@ const Main = () => {
 
 
   const removeTodo = (id) => {
+
     if (id) {
       setTodos([...todos.filter((todos) => todos.id !== id)]);
     }
